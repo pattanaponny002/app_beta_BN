@@ -132,8 +132,8 @@ io.of("/common").on("connection", (socket) => {
 
   socket.on("send_event", (event_content) => {
     //change it to io
-    io.of("/common").emit("get_event", event_content);
     console.log("SOCKET EVENT RECEIVE", event_content);
+    io.of("/common").emit("get_event", event_content);
   });
 });
 
@@ -346,7 +346,7 @@ app.get("/fetch_saveImage", async (req, res) => {
 ////socket
 
 /// you wanna use socket.io have to change this to server
-server.listen(4000, () => {
+server.listen(process.env.PORT || 4000, () => {
   console.log(`Server is running   on port  ${port}`);
 });
 
