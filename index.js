@@ -194,6 +194,8 @@ io.of("/customer_chat").on("connection", (socket) => {
 // });
 app.get("/", (req, res) => {
   console.log("GET");
+
+  res.json({ message: "CHANGING CODE" });
 });
 app.post("/request_code", async (req, res) => {
   const { email } = req.body;
